@@ -43,10 +43,13 @@ const MovieApp = ({ children }) => {
 
   const showDetail = async (id) => {
     const response = await axios(
-      `https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`
+      `https://www.omdbapi.com/?i=${id}&apikey=${API_KEY}`
     );
+
+    //http://www.omdbapi.com/?i=tt3896198&apikey=bf93d12b
     const data = response.data;
     setSelectedMovie(data);
+    console.log(data);
   };
 
   useEffect(() => {
